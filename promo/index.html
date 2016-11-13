@@ -195,6 +195,32 @@
                 });
             });
         </script>
+    
+          <script>
+            window.onscroll = function() {
+    var scroll = (document.documentElement.scrollTop ||
+        document.body.scrollTop);
+    var scroll_bottom = (document.documentElement.scrollBottom || document.body.scrollTop);            
+    if(scroll>450) {
+        
+        document.getElementById('fleche-up').style.visibility = "visible";
+        document.getElementById('fleche-up').style.top = scroll+'px';
+        $('#fleche-up').fadeIn('slow');
+    }
+
+    else 
+        if (scroll_bottom<=500) {
+      
+        document.getElementById('fleche-up').style.bottom = scroll+'px';
+        $('#fleche-up').fadeOut('slow');
+    }
+
+            
+            } 
+            
+
+</script>
+        
         
 <!-- FIN DE L'ASCENSEUR -->
 
