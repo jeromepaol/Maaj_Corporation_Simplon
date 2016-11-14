@@ -33,10 +33,10 @@
 			</a>
 		</div>
 		
-		<nav>
+		<nav id="target_nav" class="">
 		
 <!-- UL N'APPARAIT QU'À PARTIR D'UNE CERTAINE LARGEUR -->    
-			<ul>
+			<ul id="target_big_menu">
   				<li><a href="../ecolesimplon/index.html">L'École Simplon</a></li>
   				<li><a href="../simplonnice/index.html">Simplon à Nice</a></li>
   				<li><a href="../promo/index.html">Promotion 2016/17</a></li>
@@ -50,17 +50,17 @@
 			
 <!-- EN CAS DE LARGEUR INFÉRIEUR, IL Y A CE QUI SUIT -->    
 			
-		<div class="logomini">
+		<div id="logomini" class="logomini">
 		<a href="../index.html">
 			<img src="../images/logo-titre.png" width="20%" class="logominiimg"/>
 		</a>
 		</div>
 		
-		<div class="menumini">
+		<div id="menumini" class="menumini">
 			<img src="../images/minimenu.png" class="menuminiimg"/>
 		</div>
 		
-		<div class="lepetitmenu">
+		<div id="lepetitmenu" class="lepetitmenu">
   			<ul class="menuxs">
   				<li><a href="../ecolesimplon/index.html">L'École Simplon</a></li>
   				<li><a href="../simplonnice/index.html">Simplon à Nice</a></li>
@@ -271,7 +271,7 @@
   			<li>
   			 	<h5>Contacts et réseaux</h5>
   				<p>
-  				<a href="mailto:rlanney@simplon.co" class="foot">
+  				<a href="#open-email-form" class="foot">
   					<img src="../images/email-button.png" alt="email">
   				</a>
 				<a href="https://www.facebook.com/Simplon-Nice-1552815365022900/" target="_blank">
@@ -291,45 +291,38 @@
 
 <!-- FIN DU FOOTER -->
 
+<!-- EMAIL FORM MODALE -->
 
+	<div id="open-email-form">
+	
+		<p><a href="#close" class="close-form">X</a></p>
+				
+		<p id="p1">
+			Vous souhaitez nous contacter? Merci de remplir ce formulaire!
+			<br>
+			<span class="p2">Tous les champs sont obligatoires!</span>
+		</p>
+		
+		<form id="contact_form" action="" method="post">
+			<input onblur="onBlur()" type="text" id="name_input" name="name" placeholder="Votre nom" />
+			<input onblur="onBlur()" type="text" id="first_name_input" name="first-name" placeholder="Votre prénom" />
+			<input onblur="onBlur()" type="email" id="email_input" name="email-addy" placeholder="Votre email" />
+			<textarea onblur="onBlur()" id="message_area" name="msg" placeholder="Votre message." ></textarea>
+			<input id="send_button" name="send_msg" type="button" value="envoyer" />
+			<input id="reset_button" name="reset_form" type="reset" value="tout effacer" />
+		</form>	
+		
+	</div>
+
+<!-- FIN DE LA MODALE -->
+      
 <!-- ASCENSEUR -->
-
+<script src="../javascript/menuscroll.js"></script>    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('.js-scrollTo').on('click', function() { // Au clic sur un élément
-                    var page = $(this).attr('href'); // Page cible
-                    var speed = 750; // Durée de l'animation (en ms)
-                    $('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
-                    return false;
-                });
-            });
-        </script>
-      
-      <script>
-            window.onscroll = function() {
-    var scroll = (document.documentElement.scrollTop ||
-        document.body.scrollTop);
-    var scroll_bottom = (document.documentElement.scrollBottom || document.body.scrollTop);            
-    if(scroll>245) {//Quand le scroll atteint 245 
-                     //Le back to top apparait en fadeIn       
-       
-        document.getElementById('fleche-up').display = ("block");
-        $('#fleche-up').fadeIn('slow');
-    }
-
-    else 
-        if (scroll_bottom<=500) {//Quand le scroll vers le haut est inférieur ou égal a 500
-      
+    <script src="../javascript/js.js"></script>
+    <script src="../javascript/jquery.js"></script>
+    
         
-        $('#fleche-up').fadeOut('slow');//Le back to top disparait en Fadeout
-    }
-
-            
-            } 
-            
-
-</script>
         
 <!-- FIN DE L'ASCENSEUR -->
 

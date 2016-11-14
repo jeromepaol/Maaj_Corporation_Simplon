@@ -53,7 +53,13 @@ header { 	height: 198px;
 nav { 	border-top: solid 1px #000000;
 			border-bottom: solid 1px #000000;
 			min-height: 50px;
+            transition: 1.7s;
+            
 			}
+.menuminiimg {
+    height: 46px;
+    width: 46px;
+}
 
 
 
@@ -144,6 +150,93 @@ nav { 	border-top: solid 1px #000000;
 											
 }
 
+
+    /************** JAVASCRIPT POUR LE NAV *****************/
+
+/* == ON AJOUTE UNE CLASSE A NAV QUAND ON SCROLL ******/
+
+.position {
+    position: fixed;
+    background-color: #F0F1F0;
+    top: 0;
+    text-align: center;
+    max-width: 1024px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+}
+
+/* == ON AJOUTE UNE CLASSE A NAV UL QUAND ON SCROLL, POUR LE FAIRE DISPARAITRE ******/
+
+.disapear {
+    display: none;
+}
+
+/* == EN CAS DE SCROLL, ON FAIT APPARAITRE LE SECOND MENU ******/
+
+.logomini_appear {
+    display: inline-block important!;
+    vertical-align: middle;
+    text-align: left;
+    float: left;
+    min-height: 46px;
+    min-width: 108px;
+    max-height: 46px;
+    padding-left: 10px;
+}
+
+.menumini_appear {
+    vertical-align: middle;
+    text-align: center;
+    max-height: 46px;
+    max-width: 46px;
+    padding-right: 10px;
+    float: right;
+} 
+
+.lepetitmenu_appear { 	
+    position: absolute;
+    right: 10px;
+    top: 1px;
+    width: 170px;
+    height: 50px;
+}
+
+div.lepetitmenu_appear:hover ul.menuxs { 	
+    display:block;
+    max-width: 170px;
+    min-width: 70px;
+    margin-top: 50px;
+    background-color: #B0CF90;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.menuxs { display: none; }
+
+.menuxs li {	
+    display: block;
+    max-width: 150px;
+    min-width: 70px;
+    border-bottom: solid 1px #A0BF80;
+}
+
+.menuxs li a {
+    font-size: 14px;
+    text-align: right;
+    text-decoration: none;
+    display: block;
+    color: #FFFFFF;
+} 
+
+.menuxs li a:hover {	
+    font-size: 14px;
+    text-align: right;
+    text-decoration: none;
+    display: block;
+    transform: none;
+    color: #000000;
+} 
 
 /* ================================= HEADER: MENU NORMAL */
 
@@ -446,6 +539,12 @@ a.lien:hover, alien:focus, a.lien:active { font-size:12px; color: #95A5A6 ; text
     
     
 }
+@media screen and (max-width: 740px) {  /* A modifier pour réglé de l'écran */
+    #fleche-up {
+        visibility: hidden;
+        
+    }
+}
 /* FIN DE L'ASCENSEUR */
 
 
@@ -488,7 +587,120 @@ ul li {
 a.foot:link, a.foot:visited {font-size:10px; color: #D2D7D3; text-decoration:none; }
 a.foot:hover, a.foot:focus, a.foot:active { font-size:10px; color: #95A5A6; text-decoration:none; }
 
+/*DEBUT DE LA MODALE !!!!!!!!!!!!!!!!!!!*/
+#open-email-form, .hidden { display: none;  }
 
+#open-email-form:target {	display: block;
+														position: fixed;
+														top: 0;
+														right: 0;
+														width: 100%;
+														height: 760px;
+														box-sizing: border-box;
+														background-color: rgba(245, 255, 245, 1);
+														text-align: center;
+														}
+form, input, #send_button, #reset_button, textarea, #message_area, .close-form, #p1, .p2 
+	{	font-family: "Open Sans", Arial , sans-serif; }
+
+form { 	margin: 0 auto;
+				margin-top: 50px;
+				width: 80%;
+				box-sizing: border-box;
+				color: #FFF;
+                min-width: 250px;
+				}
+
+input, #message_area { 	padding: 5px;
+													margin-bottom: 15px;
+													display: block;
+													width: 100%;
+													box-sizing: border-box;
+													background-color: #252525;
+													#border: none;
+													font-size: 14px;
+													color: #FFF; 
+                                                    min-width: 250px;
+													}
+																
+#name_input { 	height: 40px;
+								border-radius: 5px 5px 0px 0px;
+               
+}
+
+.valide {
+    border: solid 3px green;
+    
+}
+.error{
+    border: solid 3px red;
+    
+}
+				
+#email_input, #first_name_input { 	height: 40px; }		
+																			
+#message_area { 	height: 200px;
+									letter-spacing: 2px;
+									border-radius: 0px 0px 5px 5px;
+									}
+									
+#send_button, #send_button:active, #send_button:hover, #reset_button, #reset_button:active, #reset_button:hover {	
+								margin-top: 15px;
+								padding-bottom: 3px;
+								display: inline-block;
+								width: 40%;
+								height: 50px;
+								box-sizing: border-box;
+								border-radius: 5px;
+								border: none;
+								text-align: center;
+								font-variant: small-caps;
+								letter-spacing: 3px;
+								font-size: 25px;
+								cursor: pointer;
+                                
+                                min-width: 250px;
+								}
+																			
+#send_button, #send_button:visited, #reset_button, #reset_button:visited {	
+																							background-color: rgba(0, 0, 0, 1);
+																							color: #FFF; 
+																							}
+
+#send_button:hover, #reset_button:hover {		background-color: rgba(1, 1, 1, 0.6);
+																							color: #FFF; 
+																							}
+
+#send_button:active, #reset_button:active {	background-color: rgba(100, 100, 100, 0.6);
+																							border: inset 1px #555;
+																							color: #FFF; 
+																							}			
+
+.close-form {		display: block;
+                    position: fixed;
+                    top: 6px;
+                    right: 20px;
+                    width: 20px;
+                    box-sizing: border-box;
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: green;
+                    max-width: 250px;
+                                
+                                
+								}
+
+#p1 {		font-size: 25px;
+				color: #000; 
+            width: 0 auto;
+            min-width: 250px;
+				}																								
+																								
+.p2 {		font-size: 15px;
+				color: red; 
+				}		
+				
+/* FIN DU CSS */
 /* FIN DU FOOTER */
 
 /* FIN DU CSS */
