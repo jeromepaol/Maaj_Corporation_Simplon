@@ -425,23 +425,7 @@ a.lien:hover, alien:focus, a.lien:active { font-size:12px; color: #95A5A6 ; text
 
 
 /* ============================================================== ASCENSEUR */
-@keyframes fadein {
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
 
-@keyframes fadeout {
-    from {
-        opacity:1;
-    }
-    to {
-        opacity:0;
-    }
-}
 
 
 #fleche-up{
@@ -455,9 +439,8 @@ a.lien:hover, alien:focus, a.lien:active { font-size:12px; color: #95A5A6 ; text
 		top: 80%;
   		right: 0%;
   		left: 92%;
-        margin-top: -246px;
-        animation: fadein 5s , fadout 5s;
-    visibility: hidden;
+        display: none;
+    
     
     
     

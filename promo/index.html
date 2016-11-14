@@ -41,7 +41,7 @@
   				<li><a href="../ecolesimplon/index.html">L'École Simplon</a></li>
   				<li><a href="../simplonnice/index.html">Simplon à Nice</a></li>
   				<li><a href="../promo/index.html">Promotion 2016/17</a></li>
-  				<li><a href="#">Médias et TP</a>
+  				<li><a href="../medias/index.html">Médias et TP</a>
   					<ul>
   						<li><a href="../medias/index.html">Photos et vidéos</a></li>
   						<li><a href="../medias/index.html">Travaux des stagiaires</a></li>
@@ -201,18 +201,18 @@
     var scroll = (document.documentElement.scrollTop ||
         document.body.scrollTop);
     var scroll_bottom = (document.documentElement.scrollBottom || document.body.scrollTop);            
-    if(scroll>450) {
-        
-        document.getElementById('fleche-up').style.visibility = "visible";
-        document.getElementById('fleche-up').style.top = scroll+'px';
+    if(scroll>245) {//Quand le scroll atteint 245 
+                     //Le back to top apparait en fadeIn       
+       
+        document.getElementById('fleche-up').display = ("block");
         $('#fleche-up').fadeIn('slow');
     }
 
     else 
-        if (scroll_bottom<=500) {
+        if (scroll_bottom<=500) {//Quand le scroll vers le haut est inférieur ou égal a 500
       
-        document.getElementById('fleche-up').style.bottom = scroll+'px';
-        $('#fleche-up').fadeOut('slow');
+        
+        $('#fleche-up').fadeOut('slow');//Le back to top disparait en Fadeout
     }
 
             

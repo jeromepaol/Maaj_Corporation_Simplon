@@ -23,7 +23,7 @@ body  {	max-width: 1024px;
 				margin: auto;
 				background-color: #FFFFFF;
 				font-family: "Open Sans", Arial , sans-serif;
-				background-image:url(images/logosimplon.png);
+				background-image:url(../images/logosimplon.png);
 				}
 
 
@@ -604,7 +604,8 @@ h2 {
 		top: 80%;
   		right: 0%;
   		left: 92%;
-  		}
+  		display: none;
+}
 
 /* FIN DE L'ASCENSEUR */
 

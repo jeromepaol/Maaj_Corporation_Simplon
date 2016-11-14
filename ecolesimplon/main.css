@@ -329,23 +329,7 @@ border-radius: 9px;
 }
 
 /* ============================================================== ASCENSEUR */
-@keyframes fadein {
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
 
-@keyframes fadeout {
-    from {
-        opacity:1;
-    }
-    to {
-        opacity:0;
-    }
-}
 
 
 #fleche-up{
@@ -359,12 +343,8 @@ border-radius: 9px;
 		top: 80%;
   		right: 0%;
   		left: 92%;
-        margin-top: 250px;
-        animation: fadein 5s , fadout 5s;
-    
-    
-    
-}
+        display: none;    
+    }
 /* FIN DE L'ASCENSEUR */
 
 

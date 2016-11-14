@@ -362,23 +362,6 @@ section em {
 
 
 /* ============================================================== ASCENSEUR */
-@keyframes fadein {
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-
-@keyframes fadeout {
-    from {
-        opacity:1;
-    }
-    to {
-        opacity:0;
-    }
-}
 
 
 #fleche-up{
@@ -392,9 +375,8 @@ section em {
 		top: 80%;
   		right: 0%;
   		left: 92%;
-        margin-top: -150px;
-        animation: fadein 5s , fadout 5s;
-    visibility: hidden;
+        display: none;
+    
     
     
     
