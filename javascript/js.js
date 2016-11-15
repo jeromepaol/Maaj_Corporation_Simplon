@@ -1,11 +1,23 @@
 /* FORM VERIFY
 ==================================================================================== */
 
+
 /* FORM RESET FUNCTION
 ==================================================================================== */
 function resetform(){
     //efface les champs du formulaire
+    var reset_name = document.getElementById('name_input');
+    var reset_fname = document.getElementById('first_name_input');
+    var reset_email = document.getElementById('email_input');
+    var reset_message_area = document.getElementById('message_area');
     document.getElementById("contact_form").reset();
+    reset_name.className = 'reset_formulaire';
+    reset_fname.className = 'reset_furmulaire';
+    reset_email.className = 'reset_formulaire';
+    reset_message_area.className = 'reset_formulaire';
+    
+   
+    
 }
 
 
@@ -14,14 +26,19 @@ function retour_ini(){
     document.getElementById("name_input").placeholder="Votre nom";
     document.getElementById('first_name_input').placeholder="Votre prénom";
     document.getElementById('email_input').placeholder="Votre email";
+    document.getElementById('message_area').placeholder="Votre message";
     document.getElementsByName("name")[0].style.color='white';
     document.getElementsByName("first-name")[0].style.color='white';
     document.getElementsByName("email-addy")[0].style.color='white';
+    document.getElementsByName("msg")[0].style.color='white';
+    
    // document.getElementById("name_input").style.border='none'; A y revenir 
     
     
     
 }
+
+
 
 function onBlur () {
     var user_name = document.getElementById('name_input');
@@ -34,6 +51,7 @@ function onBlur () {
     
     if (user_name.value.length > 3) {
         user_name.className = 'valide';
+        
     }
     else {
         user_name.className = 'error';
@@ -43,6 +61,7 @@ function onBlur () {
     
     if (user_fname.value.length > 1) {
         user_fname.className = 'valide';
+       
     }
     else {
         user_fname.className = 'error';
@@ -55,15 +74,18 @@ function onBlur () {
     }
     else {
         user_email.className = 'valide';
+        
     }
 
 
      if (compte_mot.length >= 2 && compte_mot[1] != "") {
          message_area.className = 'valide';
+         
      }
     else {
         message_area.className = 'error';
     }
+    
 }
  
 
@@ -71,18 +93,20 @@ function onBlur () {
 /* VALIDATE FUNCTION
 ==================================================================================== */	
 function validate () {
-
+var valide = 0;
 /* VERIFY FUNCTIONS
-==================================================================================== */		
+==================================================================================== */	
+ 
+   
 /* NAME VERIFY FUNCTION
 ==================================================================================== */	
 	var user_name = document.getElementById('name_input');
 
 	function verify_name() {
 		if (user_name.value.length > 3) {
-			document.getElementsByName("name")[0].value="";
-			//document.getElementsByName("name")[0].placeholder="Merci!";
-		}
+			//document.getElementsByName("name")[0].value="";
+            valide++;
+        }
 
 		else {
 			document.getElementsByName("name")[0].value="";
@@ -99,8 +123,8 @@ function validate () {
 
 	function verify_fname() {
 		if (user_fname.value.length > 1) {
-			document.getElementsByName("first-name")[0].value="";
-			
+			//document.getElementsByName("first-name")[0].value="";
+			valide++;
 		}
 
 		else {
@@ -127,23 +151,89 @@ function validate () {
    		}
    		
    		else {
-			document.getElementsByName("email-addy")[0].value="";
-			
+			//document.getElementsByName("email-addy")[0].value="";
+			valide++;
   		}
 	}
+    
+    
+    var message_area = document.getElementById('message_area');
+    var compte_mot = message_area.value.split(" ");
+    
+    function verify_text_area() {
+        if (compte_mot.length >= 2 && compte_mot[1] != "") {
+          //document.getElementsByName("msg")[0].value="";
+          valide++;  
+         
+     }
+    else {
+        document.getElementsByName("msg")[0].placeholder="Votre message doit au moins contenir 2 mots.";
+        document.getElementsByName("msg")[0].value="";
+        document.getElementsByName("msg")[0].style.color='red';
+        setTimeout(retour_ini, 3000);
+    }
+        
+        
+}
+    
+    function confirmMessage(){
+	 
+   var form = document.getElementById("contact_form");
+        
+     
+    
+    
+   
+     
+     check = confirm("vous êtes sur ?");
+    if(check==true){
+        
+        return resetform();
+       
+        
+    }
+ }
+   
+    function fermeture (){
+     //   var form = document.getElementById("contact_form");
+       // form.reset();
+    
+    
+    }
+   
+        
+  
+  
+ 
+        
+    
     
     
     
 
 /* END OF VERIFY FUNCTIONS
 ==================================================================================== */	
+
 verify_name();
 verify_fname();
 verify_email();
+verify_text_area();
+
+    
+
+/* VERIFY FUNCTIONS
+==================================================================================== */	
+ 
+   if ( valide >= 4) {
+            return confirmMessage();
+        } 
+    
+}
+
 
 /* END OF VALIDATE FUNCTION
 ==================================================================================== */	
-}
+
 
 
 /* FORM - ONCLICK LISTENERS 

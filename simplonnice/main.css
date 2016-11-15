@@ -590,6 +590,7 @@ a.foot:hover, a.foot:focus, a.foot:active { font-size:10px; color: #95A5A6; text
 /*DEBUT DE LA MODALE !!!!!!!!!!!!!!!!!!!*/
 #open-email-form, .hidden { display: none;  }
 
+
 #open-email-form:target {	display: block;
 														position: fixed;
 														top: 0;
@@ -628,12 +629,16 @@ input, #message_area { 	padding: 5px;
                
 }
 
+.reset_formulaire{
+    border: solid 1px white;
+}
+
 .valide {
-    border: solid 3px green;
+    border: solid 2px green;
     
 }
 .error{
-    border: solid 3px red;
+    border: solid 1px red;
     
 }
 				
