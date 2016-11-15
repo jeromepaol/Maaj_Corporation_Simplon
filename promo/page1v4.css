@@ -16,7 +16,8 @@ body {
     margin: auto;
     background-color: #FFFFFF;
     font-family: "Open Sans", Arial, sans-serif;
-    background-image: url(http://192.168.0.150/LROSSINI/images/logosimplon.png);
+    background-image:url(../images/logosimplon.png);
+				
 }
 
 
