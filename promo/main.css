@@ -564,12 +564,16 @@ input, #message_area { 	padding: 5px;
                
 }
 
+.reset_formulaire{
+    border: solid 1px white;
+}
+
 .valide {
-    border: solid 3px green;
+    border: solid 2px green;
     
 }
 .error{
-    border: solid 3px red;
+    border: solid 1px red;
     
 }
 				
