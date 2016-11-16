@@ -8,7 +8,7 @@
       
       
 	<meta content="text/html; charset=UTF-8" http-equiv="content-type">
-    
+    <meta http-equiv="refresh" content="x" />
 <!-- APPEL DU CSS -->
     <link rel="stylesheet" href="main.css" type="text/css">
       
@@ -213,9 +213,12 @@
 		<p><a href="#close" class="close-form">X</a></p>
 				
 		<p id="p1">
-			Vous souhaitez nous contacter? Merci de remplir ce formulaire!
+            Avez-vous jeté un coup d'oeil a notre <a id="FAQ" href="#"> F.A.Q ?</a> 
+            <br>
+            Pour toute autre demande, merci de remplir ce formulaire.
 			<br>
-			<span class="p2">Tous les champs sont obligatoires!</span>
+            
+			<span class="p2">Tous les champs sont obligatoires.</span>
 		</p>
 		
 		<form id="contact_form" action="" method="post">
@@ -223,7 +226,7 @@
 			<input onblur="onBlur()" type="text" id="first_name_input" name="first-name" placeholder="Votre prénom" />
 			<input onblur="onBlur()" type="email" id="email_input" name="email-addy" placeholder="Votre email" />
                 <textarea onblur="onBlur()" id="message_area" name="msg" placeholder="Votre message." ></textarea>
-			<input id="send_button" name="send_msg" type="button" value="envoyer"/>
+			<input id="send_button"   name="send_msg" type="button" value="envoyer"/>
 			<input id="reset_button" name="reset_form" type="reset" value="tout effacer" />
 		</form>	
 		
